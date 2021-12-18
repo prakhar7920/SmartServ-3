@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment-3</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      function ValidateEmail(inputText) {
+        var regex = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$/;
+
+        if (inputText.value.match(regex)) {
+          alert("You have provided a valid email-id");
+          return true;
+        } else {
+          alert("Sorry ! Incorrect email-id");
+          return false;
+        }
+      }
+
+      function ValidatePassword(inputText) {
+        var pass = inputText.value;
+        var pass_regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/;
+        if (pass == "") {
+          alert("Sorry ! No password entered");
+          return false;
+        }
+
+        if (pass.match(pass_regex)) {
+          alert("You have provided a valid password");
+          return true;
+        } else {
+          alert("Sorry ! Invalid password");
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="formdesign" id="name">
+      <img class="logo" src="smartserv-logo.png" alt="" />
+      <form class="form" action="">
+        <input type="text" name="username" placeholder="Username" />
+        <br />
+        <br />
+        <input type="password" name="password" placeholder="Password" />
+        <br />
+        <br />
+        <button
+          onclick="ValidateEmail(username),ValidatePassword(password)"
+          type="submit"
+        >
+          Login
+        </button>
+        <br />
+        <br />
+        <a href="http://">Forgot Your Password ?</a>
+      </form>
+    </div>
+  </body>
+</html>
